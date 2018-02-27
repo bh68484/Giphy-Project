@@ -9,7 +9,6 @@ $(document).ready(function() {
     "Sons of Anarchy",
     "Ozark",
     "How I Met Your Mother",
-    "Broad City",
     "The Wire",
     "It's Always Sunny In Philadelphia"
   ];
@@ -35,6 +34,19 @@ $(document).ready(function() {
       $("#buttons").append(btns);
     }
   }
+
+  $("#searchButton").on("click", function() {
+    event.preventDefault();
+    $("#buttons").empty();
+    var searchTerm = $("#gifSearch")
+      .val()
+      .trim();
+
+    console.log(searchTerm);
+    tvShows.push(searchTerm);
+    createButtons();
+  });
+
   createButtons();
 
   console.log(tvShows.length);
@@ -49,6 +61,7 @@ $(document).ready(function() {
       "&api_key=b0Hj2QodkVFSAjC1QJwi0ca0y8WyND9K&limit=10&rating=pg";
 
     //Ajax Call
+
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -57,6 +70,30 @@ $(document).ready(function() {
       .then(function(response) {
         console.log(queryURL);
         console.log(response);
+        $("#gifs").empty();
+        // storing the data from the AJAX request in the results variable
+        var results = response.data;
+
+        // Looping through each result item
+        for (var i = 0; i < results.length; i++) {
+          // Creating and storing a div tag
+          var tvGif = $("<div>");
+
+          // Creating a paragraph tag with the result item's rating
+          var p = $("<p>").text("Rating: " + results[i].rating);
+
+          // Creating and storing an image tag
+          var tvGif = $("<img>");
+          // Setting the src attribute of the image to a property pulled off the result item
+          tvGif.attr("src", results[i].images.fixed_height.url);
+
+          // Appending the paragraph and image tag to the animalDiv
+          $("#gifs").append(p);
+          $("#gifs").append(tvGif);
+
+          // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
+          $("#gifs").append(tvGif);
+        }
       });
   });
 });
