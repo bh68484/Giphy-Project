@@ -86,15 +86,33 @@ $(document).ready(function() {
           // Creating and storing an image tag
           var tvGif = $("<img>");
           // Setting the src attribute of the image to a property pulled off the result item
-          tvGif.attr("src", results[i].images.fixed_height.url);
+          tvGif.attr("class", "gifs");
+          tvGif.attr("src", results[i].images.fixed_height_still.url);
+          tvGif.attr("data-still", results[i].images.fixed_height_still.url);
+          tvGif.attr("data-animate", results[i].images.fixed_height.url);
+          // tvGif.attr("data-state", "still");
 
-          // Appending the paragraph and image tag to the animalDiv
+          // Appending the paragraph and image tag to the tv gif  div
           $("#gifs").append(p);
           $("#gifs").append(tvGif);
 
-          // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
+          // Prepending the tv gif div to the HTML page in the "#gifs" div
           $("#gifs").append(tvGif);
         }
       });
+    $(document).on("click", ".gifs", function() {
+      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+      var state = $(this).attr("data-state");
+      // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+      // Then, set the image's data-state to animate
+      // Else set src to the data-still value
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    });
   });
 });
