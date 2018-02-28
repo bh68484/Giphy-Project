@@ -37,7 +37,6 @@ $(document).ready(function() {
 
   $("#searchButton").on("click", function() {
     event.preventDefault();
-    $("#buttons").empty();
     var searchTerm = $("#gifSearch")
       .val()
       .trim();
@@ -51,7 +50,9 @@ $(document).ready(function() {
 
   console.log(tvShows.length);
 
-  $("button").on("click", function() {
+  //document on click - wrap in function and put call inside
+  $(document).on("click", ".tvShow", function() {
+    // $(".tvShow").on("click", function() {
     // In this case, the "this" keyword refers to the button that was clicked
     var selectedShow = $(this).attr("data-name");
     //Sets up the query parameters with search, selected show variable, api key, and rating
