@@ -9,8 +9,9 @@ $(document).ready(function() {
     "Sons of Anarchy",
     "Ozark",
     "How I Met Your Mother",
-    "The Wire",
-    "It's Always Sunny In Philadelphia"
+    "It's Always Sunny In Philadelphia",
+    "That 70's Show",
+    "Futurama"
   ];
   console.log(tvShows);
   //function to create initial buttons on the page.

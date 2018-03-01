@@ -9,6 +9,10 @@
     <!-- Linking to jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <!-- Google Fonts Source-->
+    <link href="https://fonts.googleapis.com/css?family=Amiko|Asul" rel="stylesheet">
+    <!-- Linking Font Awesome Icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <!-- Linking to Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
@@ -19,16 +23,18 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 text-center">
-                Giphy Generator
+                <h1>Giphy Generator</h1>
                 <div id="buttons">
-
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-2">
                 <div class="form-group">
-                    <label for="search">Search for new TV Show Gifs</label>
+                    <label for="search">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                        <p>Search and add new TV Show Gifs</p>
+                    </label>
                     <input type="text" class="form-control" id="gifSearch">
                 </div>
                 <div>
@@ -36,7 +42,7 @@
                         Search</button>
                 </div>
             </div>
-            <div class="row">
+            <div class="row container-fluid">
                 <div class="col-md-12">
                     <div id="gifs">
                     </div>
@@ -44,10 +50,6 @@
             </div>
         </div>
     </div>
-
-
-
-
 
     <!-- Linking to JavaScript -->
     <script src="javascript/logic.js"></script>

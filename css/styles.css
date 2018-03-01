@@ -1,3 +1,48 @@
+/* .btn-primary {
+  margin-left: 10px;
+  margin-top: 10px;
+  background-color: #337c6c;
+  border-radius: 20px;
+} */
+h1 {
+  font-family: "Asul", sans-serif;
+  color: #1a2309;
+}
+
+p {
+  font-family: "Amiko", sans-serif;
+  color: #1a2309;
+}
+
+body {
+  background: #eff4ff;
+}
+
 .btn-primary {
   margin-left: 10px;
+  margin-top: 10px;
+  padding: 15px 25px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #337c6c;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* Used to remove rectangle left around button after clicked  */
+button:focus {
+  outline: 0 !important;
 }
