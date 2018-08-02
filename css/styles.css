@@ -1,9 +1,3 @@
-/* .btn-primary {
-  margin-left: 10px;
-  margin-top: 10px;
-  background-color: #337c6c;
-  border-radius: 20px;
-} */
 h1 {
   font-family: "Asul", sans-serif;
   color: #1a2309;
@@ -45,4 +39,13 @@ body {
 /* Used to remove rectangle left around button after clicked  */
 button:focus {
   outline: 0 !important;
+}
+
+.gifContainer {
+  margin: 10px;
+  display: inline-block;
+}
+
+.gifRating {
+  text-align: center;
 }

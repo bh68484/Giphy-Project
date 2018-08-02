@@ -79,10 +79,13 @@ $(document).ready(function() {
         // Looping through each result item
         for (var i = 0; i < results.length; i++) {
           // Creating and storing a div tag
-          var tvGif = $("<div>");
+          var gifDiv = $("<div>");
+          gifDiv.addClass("gifContainer");
 
           // Creating a paragraph tag with the result item's rating
-          var p = $("<p>").text("Rating: " + results[i].rating);
+          var gifRating = $("<p>").text("Rating: " + results[i].rating);
+          gifRating.addClass("gifRating");
+          gifDiv.append(gifRating);
 
           // Creating and storing an image tag
           var tvGif = $("<img>");
@@ -91,16 +94,13 @@ $(document).ready(function() {
           tvGif.attr("src", results[i].images.fixed_height_still.url);
           tvGif.attr("data-still", results[i].images.fixed_height_still.url);
           tvGif.attr("data-animate", results[i].images.fixed_height.url);
-          // tvGif.attr("data-state", "still");
-
-          // Appending the paragraph and image tag to the tv gif  div
-          $("#gifs").append(p);
-          $("#gifs").append(tvGif);
+          gifDiv.prepend(tvGif);
 
           // Prepending the tv gif div to the HTML page in the "#gifs" div
-          $("#gifs").append(tvGif);
+          $("#gifs").prepend(gifDiv);
         }
       });
+
     $(document).on("click", ".gifs", function() {
       // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
       var state = $(this).attr("data-state");
