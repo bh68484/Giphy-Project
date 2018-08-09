@@ -1,10 +1,23 @@
-# Giphy-Project
+# TV Show Giphy Generator
 
-### Overview
+A gif generator utilizing Giphy API.
 
-For this assignment I implemented use of the Giphy API to request gifs based on the users input. A list of initial queries was dynamically created with JavaScript and jQuery and attached on the page. The user could click an initial button to retrieve 10 still gifs that, when clicked on, would animate the gifs. When any image was clicked again it would change back to being still.  
-The user also has the option of using the input button to query for other gifs. In the case of my project the theme was Tv Shows.
+## How to use
 
-Upon submitting a request of a new show, a new button would be dynamically created and attached to the page. Like the initial gif buttons, when the user clicked on the new button they created, the ajax call would use the parameters I set up and query the new Tv show they had chosen. The gifs again were displayed on the page like the initial ones, and the user would be able to click to animate them and stop them.
+The user can choose from a list of shows at the top, or search for other shows using the search form. New buttons for the searched shows are dynamically created and displayed on the page.
 
-Once the logic to create the buttons, search, and use Giphy’s API, I then styled the page with CSS.
+## Example of Application - Click image to view.
+
+[![TV Giphy Generator](https://raw.githubusercontent.com/bh68484/Giphy-Project/master/demo/demo.jpg)](https://youtu.be/GlGQk_UnF70 "TV Giphy Generator")
+
+## Live Deployment
+
+- [TV Giphy Generator](https://bh68484.github.io/Giphy-Project/) - Game Link
+
+## Built With
+
+- HTML
+- Bootstrap
+- CSS
+- JavaScript
+- jQuery
